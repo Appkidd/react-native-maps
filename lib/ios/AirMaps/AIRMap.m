@@ -114,13 +114,13 @@ const NSInteger AIRMapMaxZoomLevel = 20;
         [self addAnnotation:(id <MKAnnotation>) subview];
     } else if ([subview isKindOfClass:[AIRMapPolyline class]]) {
         ((AIRMapPolyline *)subview).map = self;
-        [self addOverlay:(id<MKOverlay>)subview];
+        [self addOverlay:(id<MKOverlay>)subview level:MKOverlayLevelAboveRoads];
     } else if ([subview isKindOfClass:[AIRMapPolygon class]]) {
         ((AIRMapPolygon *)subview).map = self;
         [self addOverlay:(id<MKOverlay>)subview];
     } else if ([subview isKindOfClass:[AIRMapCircle class]]) {
         ((AIRMapCircle *)subview).map = self;
-        [self addOverlay:(id<MKOverlay>)subview];
+        [self addOverlay:(id<MKOverlay>)subview level:MKOverlayLevelAboveRoads];
     } else if ([subview isKindOfClass:[AIRMapUrlTile class]]) {
         ((AIRMapUrlTile *)subview).map = self;
         [self addOverlay:(id<MKOverlay>)subview];
